@@ -6,6 +6,11 @@ Stencil's Cornerstone theme is the building block for BigCommerce theme develope
 ### Stencil Utils
 [Stencil-utils](https://github.com/bigcommerce/stencil-utils) is our supporting library for our events and remote interactions.
 
+## Modifications by Kenny Kelley
+This fork is made for testing an implementation of a bulk order form. I'm roughly following the walkthrough found here:
+
+https://medium.com/bigcommerce-developer-blog/build-a-bulk-order-form-for-bigcommerce-product-variants-4bf88ada05fb
+
 ## JS API
 When writing theme JavaScript (JS) there is an API in place for running JS on a per page basis. To properly write JS for your theme, the following page types are available to you:
 
