@@ -43,6 +43,20 @@ module.exports = {
                     options: '$',
                 }],
             },
+            {
+                test: /\.jsx$/,
+                exclude: /node_modules/,
+                use: {
+                    loader: "babel-loader",
+                        options: {
+                            presets: ["@babel/preset-react"],
+                        },
+                     }
+            },
+            {
+                test: /\.css/,
+                loader:[ "style-loader", "css-loader" ]
+            }
         ],
     },
     output: {
@@ -81,5 +95,6 @@ module.exports = {
             'svg-injector': path.resolve(__dirname, 'node_modules/svg-injector/dist/svg-injector.min.js'),
             sweetalert2: path.resolve(__dirname, 'node_modules/sweetalert2/dist/sweetalert2.min.js'),
         },
+        extensions: [".js", ".jsx"]
     },
 };
