@@ -8,7 +8,7 @@
   "dependencies": {
     "@babel/preset-react": "^7.12.13",
     "@bigcommerce/stencil-utils": "^6.8.1",
-    "core-js": "^3.6.5",
+    "core-js": "^3.8.3",
     "creditcards": "^3.0.1",
     "css-loader": "^5.0.2",
     "easyzoom": "^2.5.3",
