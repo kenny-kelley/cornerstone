@@ -12,6 +12,7 @@ module.exports = api => {
                 modules: 'auto',
                 useBuiltIns: 'usage', // Tree-shake babel-polyfill
                 ...targets,
+                corejs: 3,
             }],
         ],
     };
