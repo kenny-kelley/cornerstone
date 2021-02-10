@@ -19,8 +19,14 @@ product:
         {{> components/common/alert/alert-info message}}
     {{/each}}
 
+    <button id='activateBulkForm' class='button button--primary' style='display:block; margin: 0 auto;'>Purchase in bulk</button>
+
     <div itemscope itemtype="http://schema.org/Product">
-        {{> components/products/product-view schema=true  }}
+        <div id='standardTemplate'>
+            {{> components/products/product-view schema=true }}
+        </div>
+
+        <div id='bulk-variant-form' style="display:none"></div>
 
         {{{region name="product_below_content"}}}
 
