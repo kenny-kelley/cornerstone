@@ -42,3 +42,29 @@ product:
     </div>
 {{/partial}}
 {{> layout/base}}
+
+<script>
+const productID = {productID: `{{product.id}}`};
+window.initBulkVariantForm(productID);
+const btn = document.getElementById('activateBulkForm');
+const standardForm = document.getElementById('standardTemplate');
+const bulkForm = document.getElementById('bulk-variant-form');
+btn.addEventListener('click', (e) => {
+    e.preventDefault();
+    toggleForm(standardForm, bulkForm, btn);
+})
+function toggleForm(standard, bulk, toggle) {
+    if (bulk.style.display == 'none') {
+        standard.style.display = 'none';
+        bulk.style.display = 'block';
+        toggle.textContent = 'Purchase individually';
+        return;
+    }
+    if (bulk.style.display == 'block') {
+        standard.style.display = 'block';
+        bulk.style.display = 'none';
+        toggle.textContent = 'Purchase in bulk';
+        return;
+    }
+}
+</script>
