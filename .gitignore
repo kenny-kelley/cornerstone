@@ -1,6 +1,6 @@
 node_modules/
 .stencil
-config.stencil.json
+# config.stencil.json
 secrets.stencil.json
 .DS_Store
 assets/css-artifacts
