@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './styles.css';
-import bulkVariantRows from './bulk-variant-rows';
+import BulkVariantRows from './bulk-variant-rows';
 export default class BulkVariantForm extends Component {
     constructor(props) {
         super(props);
@@ -112,20 +112,19 @@ export default class BulkVariantForm extends Component {
         )
     }
 
-    // TODO: Implement this componentDidMount() method
-    // componentDidMount() {
-    //     fetch(`https://xxxxxxxxx.execute-api.region.amazonaws.com/default/middleware-endpoint?product_id=${this.props.productID}`)
-    //     .then(response => response.json())
-    //     .then(formatted => {
-    //         const lineItems = formatted['data'].map(variant => {
-    //             return {variantId: variant.id, quantity: 0, productId: parseInt(this.props.productID)}
-    //         });
-    //         this.setState({
-    //             variants: formatted['data'],
-    //             lineItems: lineItems,
-    //             loaded: true
-    //         })
-    //     })
-    //     .catch(err => console.log('Bulk form could not load: ', err))
-    // }
+    componentDidMount() {
+        fetch('https://ti60c0fx22.execute-api.us-east-2.amazonaws.com/default/get_bigcommerce_product_variants?product_id=' + this.props.productID)
+        .then(response => response.json())
+        .then(formatted => {
+            const lineItems = formatted['data'].map(variant => {
+                return {variantId: variant.id, quantity: 0, productId: parseInt(this.props.productID)}
+            });
+            this.setState({
+                variants: formatted['data'],
+                lineItems: lineItems,
+                loaded: true
+            })
+        })
+        .catch(err => console.log('Bulk form could not load: ', err))
+    }
 }

@@ -5,7 +5,7 @@ const filterOptionValues = (option_values) => {
     })
     return nameValues;
 }
-const bulkVariantRows = (props) => {
+const BulkVariantRows = (props) => {
     const variants = props.variants;
     const variantRows = variants.map((variant, index) => {
         return (
@@ -22,4 +22,4 @@ const bulkVariantRows = (props) => {
     })
     return variantRows;
 }
-export default bulkVariantRows;
+export default BulkVariantRows;
